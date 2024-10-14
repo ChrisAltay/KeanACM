@@ -1,0 +1,278 @@
+/*main setup*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;  
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+
+main {
+  background-color: #fdfdfd;
+  flex-grow: 1;
+}
+
+.user-img {
+  width: 50px;
+  border-radius: 100%;
+  border: 1px solid white;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 80px;
+  background-color: #12171e;
+  padding: 0.4rem 0.8rem;
+  transition: all 0.5s ease;
+  z-index: 100;
+}
+
+.sidebar.active ~ .page-content {
+  left: 250px;
+  width: calc(100% - 250px);
+}
+
+.sidebar.active {
+  width: 250px;
+}
+
+.sidebar #btn {
+  position: absolute;
+  color: #fff;
+  top: .4rem;
+  left: 50%;
+  font-size: 1.2rem;
+  line-height: 50px;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.sidebar.active #btn {
+  left: 90%;
+}
+
+.sidebar .top .logo {
+  color: #fff;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.sidebar.active .top .logo {
+  opacity: 1;
+}
+
+.top .logo i {
+  font-size: 2rem;
+  margin-right: 5px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0
+}
+
+.user p {
+  color: #fff;
+  opacity: 1;
+  margin-left: 1rem;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.sidebar p {
+  opacity: 0;
+}
+
+.sidebar.active p {
+  opacity: 1;
+}
+
+.sidebar ul li {
+  position: relative;
+  list-style-type: none;
+  height: 60px;
+  width: 90%;
+  margin: 0.8rem auto;
+  line-height: 20px;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 0.8rem;
+}
+
+.sidebar ul li a:hover {
+  background-color: #fff;
+  color: #12171e;
+}
+
+.sidebar ul li a i {
+  min-width: 50px;
+  text-align: center;
+  height: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+}
+
+.sidebar .nav-item {
+  opacity: 0;
+}
+
+.sidebar.active .nav-item {
+  opacity: 1;
+}
+
+.sidebar ul li .tooltip {
+  position: absolute;
+  left: 90px;
+  top: 5px;
+  box-shadow: 0 0.5rem 0.6rem rgba(0, 0, 0, 0.2);
+  background-color: white;
+  width: 400%;
+  text-align: center;
+  border-radius: .6rem;
+  padding: .4rem 1.2rem;
+  line-height: 1.8rem;
+  z-index: 40;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.sidebar ul li:hover .tooltip {
+  opacity: 1;
+}
+
+.sidebar.active ul li .tooltip {
+  display: none;
+}
+
+.page-content {
+  position: relative;
+  background-color: #eee;
+  min-height: 100vh;
+  top: 0;
+  transition: all 0.5s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*home and events setup*/
+.page-content {
+  padding: 10px 10vw;
+}
+.page-content h1 {
+  text-align: center;
+  font-size: xx-large;
+  font-weight: 600;
+}
+.page-content h2 {
+  text-align: center;
+  font-weight: 400;
+}
+.headline span:nth-child(1) {
+  font-size: x-large;
+  font-weight: 800;
+}
+.headline span:nth-child(2) {
+  color: gray;
+}
+.headline span:nth-child(2)::before {
+  content: "(";
+}
+.headline span:nth-child(2)::after {
+  content: ")";
+}
+.meta {
+  color: gray;
+  margin-bottom: 10px;
+}
+/*about*/
+.officers {
+  text-align: center;
+  display: block;
+}
+.officer {
+  display: inline-block;
+  margin: 5px 20px;
+}
+.officer p:nth-child(1) {
+  font-weight: 600;
+}
+.officer p:nth-child(1) {
+}
+/*other pages*/
+.line {
+  font-size: x-large;
+  font-weight: 600;
+  display: block;
+  padding: 20px 0px;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+.tooltip div {
+  visibility: hidden;
+  background-color: #113b51;
+  color: #fff;
+  text-align: center;
+  padding: 5px 5px;
+  border-radius: 6px;
+
+  bottom: 100%;
+  margin-left: -60px;
+  position: absolute;
+  z-index: 1;
+}
+.tooltip:hover div {
+  visibility: visible;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
