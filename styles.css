@@ -8,17 +8,23 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;  
+  
   line-height: 1.5;
   font-weight: 300;
 }
 
 
 main {
-  background-color: #fdfdfd;
   flex-grow: 1;
 }
 
+p {
+  color: #000000;
+}
+
+
+
+/*Responsive Sidebar Styles*/
 .user-img {
   width: 50px;
   border-radius: 100%;
@@ -26,7 +32,7 @@ main {
 }
 
 .sidebar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
@@ -35,11 +41,6 @@ main {
   padding: 0.4rem 0.8rem;
   transition: all 0.5s ease;
   z-index: 100;
-}
-
-.sidebar.active ~ .page-content {
-  left: 250px;
-  width: calc(100% - 250px);
 }
 
 .sidebar.active {
@@ -166,113 +167,343 @@ main {
   display: none;
 }
 
+
+
+
+/* Home page Styles */
 .page-content {
   position: relative;
-  background-color: #eee;
+  background-color: #ffffff;
   min-height: 100vh;
   top: 0;
   transition: all 0.5s ease;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*home and events setup*/
-.page-content {
   padding: 10px 10vw;
 }
+
 .page-content h1 {
   text-align: center;
   font-size: xx-large;
   font-weight: 600;
 }
-.page-content h2 {
+
+/*Bade Icons*/
+.badge-container {
+  width: 73vw;
+  height: 40vh;
+  overflow: hidden;
+  margin-left: 5%;
+  margin-top: 3%;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap; 
+  animation: scrollUp 15s linear infinite;  /* Scrolling speed */
+  justify-content: space-between;
+  
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(60%); /* Start with badges below the visible area */
+  }
+  100% {
+    transform: translateY(-100%); /* Scroll all the way up */
+  }
+}
+
+.badge-item {
+  margin: 10px; 
   text-align: center;
+  height: 30%;
+  width: 20%; 
+
+}
+
+.badges img {
+  height: 100%;
+  width: 100%; 
+}
+
+.resource-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none; /* Removes the bullet points */
+  padding-left: 0; /* Removes the default indentation */
+  gap: 10%;
+}
+
+.resource-card ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none; /* Removes the bullet points */
+  padding-left: 0; /* Removes the default indentation */
+}
+
+
+
+
+/* About page styles */
+.SocialIcons {
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
+}
+
+.socials {
+  width: 40px; 
+}
+
+.social1 {
+  width: 40px;
+}
+
+.officers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 1fr 1fr 1fr 1fr */ 
+  grid-gap: 10px; 
+  justify-items: center; 
+  margin-left: 16%;
+  width: 70%;
+}
+
+.officer {
+display: flex;
+flex-direction: column;
+align-items: center;
+color: black;
+font-weight: 400;
+}
+
+
+.officer img {
+width: 80%;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+
+
+
+/* Events page styles */
+.events-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#current-event {
+  width: 100%;
+  padding: 20px;
+  background-color: #f1f1f1;
+  margin-bottom: 30px;
+}
+
+#current-event-content {
+  border: 2px solid #96b8dd;
+  padding: 20px;
+  background-color: #e7f3ff;
+  width: 40%;
+}
+
+.eventimages {
+  width: 90%;
+}
+
+.all-events {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  grid-gap: 20px;
+  width: 100%;
+}
+
+.event-card {
+  border: 1px solid #000000;
+  padding: 20px;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 1px 2px 9px #000000;
+  transition: transform 0.3s ease; 
+}
+
+.event-card:hover {
+  transform: scale(1.1); 
+}
+
+
+/*Mobile Design*/
+@media (max-width: 768px) {
+
+/*Mobile Styles for Sidebar*/
+.sidebar ul li:hover .tooltip {
+  opacity: 0;
+}
+
+
+
+/*Mobile Styles for Home page*/
+.home-container {
+  padding-left: 15%;
+  font-size: 0.7rem;
+} 
+
+.home-container h1 {
+  font-size: 1rem;
+} 
+
+/*Bade Icons*/
+.badge-container {
+  display:flex;
+  justify-content: center;
+  width: 73vw;
+  height: 40vh;
+  margin: 0%;
+}
+
+.badges {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  animation: scrollUp 15s linear infinite;  /* Scrolling speed */
+  width: 95%;
+  height: 200%;
+  justify-items: center;
+  
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(60%); /* Start with badges below the visible area */
+  }
+  100% {
+    transform: translateY(-100%); /* Scroll all the way up */
+  }
+}
+
+.badge-item {
+  margin: 0px; 
+  text-align: center;
+  height: 100%;
+  width: 100%; 
+
+}
+
+.resource-card {
+ margin-top: 4%;
+}
+
+
+/*Mobile Styles for About page*/
+.about-container {
+  padding-left: 15%;
+  font-size: 0.7rem;
+} 
+
+.about-container h1 {
+  font-size: 1rem;
+} 
+
+.SocialIcons {
+  margin-top: 1%;
+  margin-left: 33%;
+}
+
+.socials {
+  width: 25px; 
+}
+
+.social1 {
+  width: 25px;
+}
+
+.officers {
+  grid-template-columns: repeat(2, 1fr); /* 1fr 1fr 1fr 1fr */ 
+  grid-gap: 2px; 
+  margin-left: 0%;
+  width: 100%;
+  justify-items: center;
+}
+
+.officer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
   font-weight: 400;
 }
-.headline span:nth-child(1) {
-  font-size: x-large;
-  font-weight: 800;
-}
-.headline span:nth-child(2) {
-  color: gray;
-}
-.headline span:nth-child(2)::before {
-  content: "(";
-}
-.headline span:nth-child(2)::after {
-  content: ")";
-}
-.meta {
-  color: gray;
-  margin-bottom: 10px;
-}
-/*about*/
-.officers {
-  text-align: center;
-  display: block;
-}
-.officer {
-  display: inline-block;
-  margin: 5px 20px;
-}
-.officer p:nth-child(1) {
-  font-weight: 600;
-}
-.officer p:nth-child(1) {
-}
-/*other pages*/
-.line {
-  font-size: x-large;
-  font-weight: 600;
-  display: block;
-  padding: 20px 0px;
-}
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
-}
-.tooltip div {
-  visibility: hidden;
-  background-color: #113b51;
-  color: #fff;
-  text-align: center;
-  padding: 5px 5px;
-  border-radius: 6px;
 
-  bottom: 100%;
-  margin-left: -60px;
-  position: absolute;
-  z-index: 1;
-}
-.tooltip:hover div {
-  visibility: visible;
+
+.officer img {
+  width: 50%;
 }
 
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
+.getintouch {
+  margin-top: 4%;
 }
+
+.Eboard {
+  margin-top: 4%;
+}
+
+
+
+
+/*Mobile Styles for Events page*/
+.events-container {
+  padding-left: 10%;
+}
+
+.all-events {
+  grid-template-columns: repeat(1, 1fr); 
+ /*Change to -----width: 90%;----- if issues with reshaping on certain devices*/
+  justify-items: center;
+  font-size: 0.9rem;
+}
+
+.event-card { /*Each event box*/
+  width: 80%;
+}
+
+.eventimages {  /*Each image inside event box*/
+  width: 80%;
+}
+
+  
+#current-event-content {  /*Specific image inside current event content*/
+  width: 100%;
+}
+
+#current-event {  /*All info inside current event content*/
+  width: 100%;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.event-card:hover {
+  transform: none; 
+}
+
+#current-event h2 {
+  font-size: 1rem;
+  text-align: left;
+}
+
+}
+
+/*Mobile Design Specific for Home, About & Events pages on very tiny devices*/
+@media (max-width: 395px) {
+  .home-container {
+    padding-left: 20%;
+  }
+  
+  .events-container {
+    padding-left: 15%;
+  }
+
+  .about-container {
+    padding-left: 20%;
+  } 
+
+  }
