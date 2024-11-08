@@ -346,6 +346,7 @@ width: 80%;
 
 /*Mobile Styles for Home page*/
 .home-container {
+  height: 95vh;
   padding-left: 15%;
   font-size: 0.7rem;
 } 
@@ -373,25 +374,16 @@ width: 80%;
   
 }
 
-@keyframes scrollUp {
-  0% {
-    transform: translateY(60%); /* Start with badges below the visible area */
-  }
-  100% {
-    transform: translateY(-100%); /* Scroll all the way up */
-  }
-}
-
 .badge-item {
   margin: 0px; 
   text-align: center;
   height: 100%;
   width: 100%; 
-
 }
 
 .resource-card {
- margin-top: 4%;
+  height: 20%;
+  margin-top: 4%;
 }
 
 .resource-card h3 {
@@ -399,7 +391,7 @@ width: 80%;
  }
 
  .resource-card li a{
-  margin-bottom: 4%;
+  margin-bottom: 9% !important;
  }
 
 
@@ -518,4 +510,13 @@ width: 80%;
     padding-left: 20%;
   } 
 
+  .resource-card h3 {
+    font-size: 0.6rem;
+   }
+
+   .event-card { 
+    font-size: 0.6rem;
   }
+   
+}
+
