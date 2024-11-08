@@ -394,6 +394,16 @@ width: 80%;
  margin-top: 4%;
 }
 
+.resource-card h3 {
+  font-size: 0.7rem;
+ }
+
+ .resource-card li a{
+  margin-bottom: 4%;
+ }
+
+
+
 
 /*Mobile Styles for About page*/
 .about-container {
@@ -411,11 +421,11 @@ width: 80%;
 }
 
 .socials {
-  width: 25px; 
+  width: 28px; 
 }
 
 .social1 {
-  width: 25px;
+  width: 28px;
 }
 
 .officers {
@@ -464,6 +474,7 @@ width: 80%;
 
 .event-card { /*Each event box*/
   width: 80%;
+  font-size: 0.7rem;
 }
 
 .eventimages {  /*Each image inside event box*/
@@ -473,6 +484,7 @@ width: 80%;
   
 #current-event-content {  /*Specific image inside current event content*/
   width: 100%;
+  font-size: 0.7rem;
 }
 
 #current-event {  /*All info inside current event content*/
@@ -486,7 +498,7 @@ width: 80%;
 }
 
 #current-event h2 {
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-align: left;
 }
 
