@@ -342,11 +342,6 @@ width: 80%;
   opacity: 0;
 }
 
-.sidebar {
-  overflow-y: auto; /* Adds a scrollbar if the content overflows */
-  max-height: 100vh; /* Keeps the sidebar within the viewport height */
-}
-
 
 /*Mobile Styles for Home page*/
 .home-container {
@@ -523,4 +518,14 @@ width: 80%;
   }
    
 }
+
+
+@media (max-width: 1920px) and  (max-height: 1080px) {
+  
+  .sidebar ul li {
+    height: 49px;
+  }
+
+}
+
 
