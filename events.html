@@ -134,35 +134,41 @@
 
 
 <script>
-// JavaScript to display the current event
-document.addEventListener('DOMContentLoaded', function () {
-  const today = new Date(); // Get today's date
-  const eventCards = document.querySelectorAll('.event-card');
-  let currentEvent = null;
-  let closestDate = null;
-
-  eventCards.forEach(card => {
-    const eventDate = new Date(card.getAttribute('data-date'));
-
-    if (eventDate >= today) {
-      // Check if this is the first event or the closest upcoming event
-      if (closestDate === null || eventDate < closestDate) {
-        closestDate = eventDate;
+  // JavaScript to display the current event
+  document.addEventListener('DOMContentLoaded', function () {
+    // Format today's date as YYYY-MM-DD
+    const today = new Date();
+    const todayString = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+    console.log("Today's Date (formatted):", todayString); // Log today's date in the console
+  
+    const eventCards = document.querySelectorAll('.event-card');
+    let currentEvent = null;
+  
+    // Check each event to see if it matches today's date
+    eventCards.forEach(card => {
+      const eventDateString = card.getAttribute('data-date'); // Get date as plain string
+      console.log("Checking event date:", eventDateString); // Log each event's date
+  
+      // If we find an event that matches today's date, set it as the current event
+      if (eventDateString === todayString) {
+        console.log("Match found for today's event:", card.innerHTML); // Log the matched event
         currentEvent = card;
       }
+    });
+  
+    // Display the current event in the "Current Event" section
+    const currentEventContent = document.getElementById('current-event-content');
+    if (currentEvent) {
+      currentEventContent.innerHTML = currentEvent.innerHTML; // Copy the event details
+    } else {
+      // If no matching event, show a message
+      currentEventContent.innerHTML = "<p>No upcoming events</p>";
+      console.log("No event matches today's date");
     }
   });
-
-  // Display the current event in the "Current Event" section
-  if (currentEvent) {
-    const currentEventContent = document.getElementById('current-event-content');
-    currentEventContent.innerHTML = currentEvent.innerHTML; // Copy the event details
-  } else {
-    // If no upcoming event, show a message
-    const currentEventContent = document.getElementById('current-event-content');
-    currentEventContent.innerHTML = "<p>No upcoming events</p>";
-  }
-});
-</script>
+  </script>
+  
+  
+  
 
 </html>
