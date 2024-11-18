@@ -313,6 +313,13 @@ width: 80%;
   width: 90%;
 }
 
+.eventimages1 {
+  border-color: red;
+  border: solid;
+  width: 40%;
+  height: 40%;
+}
+
 .all-events {
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
