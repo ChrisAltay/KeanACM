@@ -240,18 +240,19 @@ p {
 }
 
 .resource-card li {
-  margin-bottom: 10%;
+  border-color: red;
+  border:solid;
+  height: 20%;
+  margin-bottom: 5%;
 }
 
 .button {
   color: #000000;
-  transition: transform 0.3s ease; 
   text-decoration: none;
 }
 
 .button:hover {
   color: #96b8dd;
-  transform: scale(1.3);
 }
 
 
