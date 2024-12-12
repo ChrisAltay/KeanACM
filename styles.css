@@ -244,13 +244,15 @@ p {
 }
 
 .resource-card li {
-  margin-bottom: 5%;
+  margin-bottom: 15%;
+  border-color: red;
+  border: solid;
 }
 
 .button {
   color: #000000;
   position: relative; /* Prevents overlap issues */
-  z-index: 1000; /* Brings the links to the front */
+  z-index: 100; /* Brings the links to the front */
   text-decoration: none;
 }
 
@@ -334,8 +336,6 @@ width: 80%;
 }
 
 .eventimages1 {
-  border-color: red;
-  border: solid;
   width: 40%;
   height: 40%;
 }
@@ -402,7 +402,6 @@ width: 80%;
   width: 95%;
   height: 200%;
   justify-items: center;
-  
 }
 
 .badge-item {
