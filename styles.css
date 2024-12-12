@@ -240,9 +240,6 @@ p {
 }
 
 .resource-card li {
-  border-color: red;
-  border:solid;
-  height: 20%;
   margin-bottom: 5%;
 }
 
