@@ -215,7 +215,6 @@ p {
   text-align: center;
   height: 30%;
   width: 20%; 
-
 }
 
 .badges img {
@@ -245,6 +244,8 @@ p {
 
 .button {
   color: #000000;
+  position: relative; /* Prevents overlap issues */
+  z-index: 1; /* Brings the links to the front */
   text-decoration: none;
 }
 
