@@ -244,9 +244,7 @@ p {
 }
 
 .resource-card li {
-  margin-bottom: 15%;
-  border-color: red;
-  border: solid;
+  margin-bottom: 2%;
 }
 
 .button {
