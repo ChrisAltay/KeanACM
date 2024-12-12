@@ -250,7 +250,7 @@ p {
 .button {
   color: #000000;
   position: relative; /* Prevents overlap issues */
-  z-index: 1; /* Brings the links to the front */
+  z-index: 1000; /* Brings the links to the front */
   text-decoration: none;
 }
 
