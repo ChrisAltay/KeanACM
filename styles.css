@@ -301,6 +301,15 @@ font-weight: 400;
 width: 80%;
 }
 
+/*work on this later
+.officer1 img {
+  border-color: red;
+  border: solid !important;
+  width: 50% !important;
+  border-radius: 20% !important;
+}
+*/
+
 .bold {
   font-weight: 700;
 }
